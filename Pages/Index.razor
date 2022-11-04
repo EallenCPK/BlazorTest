@@ -1,0 +1,29 @@
+﻿@page "/"
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@inject IHttpClientFactory ClientFactory
+
+
+@code {
+    private string result = string.Empty;
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get,
+        "https://testfunc898.azurewebsites.net/api/HttpTrigger1?code=DtUZyXbsgyp2d2xwZjIy_eMKSXFPC1_aisLq39PVQtubAzFu0V7KkQ==");
+
+
+        var client = ClientFactory.CreateClient();
+
+        var response = await client.SendAsync(request);
+
+        result = await response.Content.ReadAsStringAsync();
+
+}
+}
+
+<PageTitle>Index</PageTitle>
+
+<h1>@result</h1>
+
+
+<SurveyPrompt Title="How is Blazor working for you?" />
