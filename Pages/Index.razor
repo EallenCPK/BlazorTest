@@ -9,7 +9,7 @@
     protected override async Task OnInitializedAsync()
     {
         var request = new HttpRequestMessage(HttpMethod.Get,
-        "https://webappcontoso-23408.azurewebsites.net");
+        "https://backend-ate3b9cwdgbpesbp.z01.azurefd.net/");
 
         var client = ClientFactory.CreateClient();
 
@@ -22,7 +22,7 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>@result</h1>
+<h1>@result -FD</h1>
 
 
 @* <SurveyPrompt Title="How is Blazor working for you?" /> *@
