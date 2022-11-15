@@ -1,4 +1,6 @@
-﻿@page "/"
+﻿28 lines (18 sloc)  641 Bytes
+
+@page "/"
 @using System.Text.Json
 @using System.Text.Json.Serialization
 @inject IHttpClientFactory ClientFactory
@@ -9,7 +11,7 @@
     protected override async Task OnInitializedAsync()
     {
         var request = new HttpRequestMessage(HttpMethod.Get,
-        "https://backend-ate3b9cwdgbpesbp.z01.azurefd.net/");
+        "https://webapp-backend-5947.azurewebsites.net/");
 
         var client = ClientFactory.CreateClient();
 
@@ -23,6 +25,3 @@
 <PageTitle>Index</PageTitle>
 
 <h1>@result -FD</h1>
-
-
-@* <SurveyPrompt Title="How is Blazor working for you?" /> *@
