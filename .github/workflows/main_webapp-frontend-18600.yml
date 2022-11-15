@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - WebAppContoso-14432
+name: Build and deploy ASP.Net Core app to Azure Web App - WebApp-frontend-18600
 
 on:
   push:
@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'WebAppContoso-14432'
+          app-name: 'WebApp-frontend-18600'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DF9367B50BF845ADA1CF5B51E1F1C223 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D4521E74FCA74FBC916AED622F4B5A6D }}
           package: .
