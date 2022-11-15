@@ -1,4 +1,4 @@
-﻿28 lines (18 sloc)  641 Bytes
+﻿28 lines (18 sloc) 641 Bytes
 
 @page "/"
 @using System.Text.Json
@@ -10,18 +10,23 @@
     private string result = string.Empty;
     protected override async Task OnInitializedAsync()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get,
-        "https://webapp-backend-5947.azurewebsites.net/");
+        try
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get,
+            "https://webapp-backend-5947.azurewebsites.net/");
 
-        var client = ClientFactory.CreateClient();
+            var client = ClientFactory.CreateClient();
 
-        var response = await client.SendAsync(request);
+            var response = await client.SendAsync(request);
 
-        result = await response.Content.ReadAsStringAsync();
+            result = await response.Content.ReadAsStringAsync();
+        }catch{
+            result = "Tried and didn't work";
+        }
 
 }
 }
 
 <PageTitle>Index</PageTitle>
 
-<h1>@result -FD</h1>
+<h1>@result-FD</h1>
